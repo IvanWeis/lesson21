@@ -6,5 +6,6 @@ app_name = 'blogapp'
 #views.main_view()
 urlpatterns = [
     path('', views.main_view),        # главная страница
-    path('category', views.category)  # category
+    path('category', views.category),  # category
+    path('contact', views.contact)    # contact
 ]

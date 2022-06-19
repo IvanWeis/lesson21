@@ -11,6 +11,7 @@ class Tovar (models.Model):
     price= models.IntegerField()
     # одна категория - много товаров:
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='tovars', null=True, blank=True)
     def __str__(self):      # чтобы в Админке выводилось по русски
         return self.name
 
