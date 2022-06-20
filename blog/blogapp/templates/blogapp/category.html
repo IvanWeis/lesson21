@@ -41,7 +41,7 @@
 
 				<div class="sidebar-filter mt-50">
 					<div class="top-filter-head">Product Filters</div>
-					<div class="common-filter">
+					<div class="common-filter">  <!-- Фильтр по брендам-->
 						<div class="head">Brands</div>
 						<form action="#">
 							<ul>
@@ -53,7 +53,7 @@
 							</ul>
 						</form>
 					</div>
-					<div class="common-filter">
+					<div class="common-filter">  <!-- Фильтр по цветам -->
 						<div class="head">Color</div>
 						<form action="#">
 							<ul>
@@ -67,7 +67,7 @@
 							</ul>
 						</form>
 					</div>
-					<div class="common-filter">
+					<div class="common-filter">   <!-- Фильтр по цене -->
 						<div class="head">Price</div>
 						<div class="price-range-area">
 							<div id="price-range"></div>
@@ -111,19 +111,20 @@
 					</div>
 				</div>
 				<!-- End Filter Bar -->
+
 				<!-- Start Best Seller -->
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
+
+							{% for item in tovars %}     <!-- в цикле выводим товары -->
+		     				<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="/static/img/product/p1.jpg" alt="">
+								<img class="img-fluid" src="{{ item.image.url }}" alt="">  <!-- Фото -->
 								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
+									<h6>{{ item.name }}</h6>                               <!-- Имя -->
 									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
+										<h6>Цена: {{ item.price }} руб</h6>                <!-- Цена -->
+										<h6>Лот {{ item.id }}</h6>                         <!-- Лот -->
 									</div>
 									<div class="prd-bottom">
 
@@ -147,12 +148,14 @@
 								</div>
 							</div>
 						</div>
-						<!-- single product -->
+						{% endfor %}
+
+						<!-- single product2 -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
 								<img class="img-fluid" src="/static/img/product/p2.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
+									<h6>2 addidas New Hammer sole
 										for Sports person</h6>
 									<div class="price">
 										<h6>$150.00</h6>
@@ -180,12 +183,13 @@
 								</div>
 							</div>
 						</div>
-						<!-- single product -->
+
+						<!-- single product3 -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
 								<img class="img-fluid" src="/static/img/product/p3.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
+									<h6>3 addidas New Hammer sole
 										for Sports person</h6>
 									<div class="price">
 										<h6>$150.00</h6>
@@ -213,12 +217,13 @@
 								</div>
 							</div>
 						</div>
-						<!-- single product -->
+
+						<!-- single product4 -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
 								<img class="img-fluid" src="/static/img/product/p4.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
+									<h6>4 addidas New Hammer sole
 										for Sports person</h6>
 									<div class="price">
 										<h6>$150.00</h6>
@@ -246,12 +251,13 @@
 								</div>
 							</div>
 						</div>
-						<!-- single product -->
+
+						<!-- single product5 -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
 								<img class="img-fluid" src="/static/img/product/p5.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
+									<h6>5 addidas New Hammer sole
 										for Sports person</h6>
 									<div class="price">
 										<h6>$150.00</h6>
@@ -279,12 +285,13 @@
 								</div>
 							</div>
 						</div>
-						<!-- single product -->
+
+						<!-- single product6 -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
 								<img class="img-fluid" src="/static/img/product/p6.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
+									<h6>6 addidas New Hammer sole
 										for Sports person</h6>
 									<div class="price">
 										<h6>$150.00</h6>
@@ -315,6 +322,7 @@
 					</div>
 				</section>
 				<!-- End Best Seller -->
+
 				<!-- Start Filter Bar -->
 				<div class="filter-bar d-flex flex-wrap align-items-center">
 					<div class="sorting mr-auto">
