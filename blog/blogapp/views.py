@@ -7,7 +7,9 @@ def main_view(request):
 
 def category(request):
     categories = Category.objects.all() # выбираем все Категории и отправляем на страницу
-    return render(request, 'blogapp/category.html', context={'categories' : categories})
+    tovars = Tovar.objects.all() # выбираем все Тщвары и отправляем на страницу
+    return render(request, 'blogapp/category.html', context={'categories' : categories, 'tovars' : tovars})
 
 def contact(request):
     return render(request, 'blogapp/contact.html', context={}) # запускаем страницу LETTER
+
