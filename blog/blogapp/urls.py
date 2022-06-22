@@ -7,5 +7,8 @@ app_name = 'blogapp'
 urlpatterns = [
     path('', views.main_view),        # главная страница
     path('category', views.category),  # category
-    path('contact', views.contact)    # contact
+    path('contact', views.contact),    # contact
+#    path('tovar-list', views.TovarListView.as_view()),
+    path('tovar-list', views.CategoryListView.as_view()),
+    path('tovar-detail/<int:pk>/', views.TovarDetailView.as_view()) # pk - первичный ключ
 ]
